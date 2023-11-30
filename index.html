@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .login-form {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #337ab7;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-form button:hover {
+      background-color: #286090;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Home Workout App</h1>
+    <form class="login-form" onsubmit="return loginUser()">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your email">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>
+      <a href="forgotpassword.html">Forgot Password</a>
+    </p>
+    <p>
+      <a href="signup.html">Sign Up</a>
+    </p>
+  </div>
+
+  <script>
+    function loginUser() {
+      var enteredEmail = document.getElementById('username').value;
+      var enteredPassword = document.getElementById('password').value;
+
+      // Hardcoded credentials for demonstration purposes
+      var correctEmail = 'user@gmail.com';
+      var correctPassword = 'admin123';
+
+      if (enteredEmail === correctEmail && enteredPassword === correctPassword) {
+        // Redirect to the specified file path upon successful login
+        window.location.href = 'C:/Users/L.A.2003/IT3A/Final/testpage.html';
+        return false; // Prevent form submission since we're redirecting
+      } else {
+        // Show an error message if the credentials are incorrect
+        alert('Incorrect email or password. Please try again.');
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+</html>

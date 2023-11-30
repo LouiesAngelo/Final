@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-Up Page</title>
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .sign-up-form {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .sign-up-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .sign-up-form input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .sign-up-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #337ab7;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .sign-up-form button:hover {
+      background-color: #286090;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Home Workout App</h1>
+    <form id="myForm" class="sign-up-form" action="/signup" method="post">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="first_name" placeholder="Enter your first name">
+
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="last_name" placeholder="Enter your last name">
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password">
+      
+      <button onclick="submitFormAndRedirect()" class="link-button">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    function submitFormAndRedirect() {
+      // Validation - You can add more robust validation logic here
+      var firstName = document.getElementById('first-name').value;
+      var lastName = document.getElementById('last-name').value;
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirm-password').value;
+
+      // Check if all fields are filled
+      if (firstName && lastName && username && password && confirmPassword) {
+        // Check if passwords match
+        if (password === confirmPassword) {
+          // Redirect to the specified file path upon successful signup
+          window.location.href = 'C:/Users/L.A.2003/IT3A/Final/index.html';
+          return false; // Prevent form submission since we're redirecting
+        } else {
+          alert('Passwords do not match. Please re-enter.');
+        }
+      } else {
+        alert('Please fill in all the fields.');
+      }
+      return false; // Prevent form submission if validation fails
+    }
+  </script>
+</body>
+</html>
